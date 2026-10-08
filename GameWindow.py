@@ -1,6 +1,7 @@
 import math
 import random
 from time import sleep
+from tkinter import messagebox
 
 import Game
 import tkinter as tk
@@ -177,7 +178,41 @@ class GameWindow:
             self.updateStatusLabel("Du hast gewonnen!", Theme.SUCCESS_COLOR)
         else:
             self.updateStatusLabel("Der Computer hat gewonnen!", Theme.ERROR_COLOR)
+
+        # Dialog erst zeigen, wenn die letzte Animation sicher fertig ist
+        longestAnimation = max(len(self.hit_frames), len(self.water_frames))
+        delay = longestAnimation * 100 + 800
+        self.root.after(delay, self.showGameOverDialog, winner)
         return True
+
+    def showGameOverDialog(self, winner):
+        if winner == Enums.Player.One:
+            message = "Glückwunsch, du hast die gegnerische Flotte versenkt!\n\nNochmal spielen?"
+        else:
+            message = "Der Computer hat deine Flotte versenkt.\n\nNochmal spielen?"
+
+        playAgain = messagebox.askyesno("Spiel vorbei", message)
+        if playAgain:
+            self.restartGame()
+        else:
+            self.root.destroy()
+
+    def restartGame(self):
+        self.game = Game()
+
+        self.isPlacing = True
+        self.isBattle = False
+        self.selectedShip = None
+        self.currentShipRotation = Enums.Orientation.Horizontal
+
+        for element in self.frameLeft.winfo_children():
+            element.destroy()
+        for element in self.frameRight.winfo_children():
+            element.destroy()
+
+        self.placementView()
+        self.updateNextShipLabel()
+        self.updateStatusLabel("Neues Spiel: Platziere deine Flotte.")
 
     def updateStatusLabel(self,message:str,color:str=Theme.TEXT_COLOR):
         self.statusLabel.config(text=message,fg=color)
