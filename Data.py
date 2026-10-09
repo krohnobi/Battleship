@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from Battleship import Enums
-from Battleship.Ship import Ship
+import Enums
+from Ship import Ship
 
 @dataclass
 class ShotOutcome:

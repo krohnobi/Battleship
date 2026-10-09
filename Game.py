@@ -1,8 +1,8 @@
 import random
-from Battleship.Board import Board
-from Battleship import Enums
-from Battleship.Data import ShotOutcome
-from Battleship.Ship import Ship
+from Board import Board
+import Enums
+from Data import ShotOutcome
+from Ship import Ship
 
 
 

@@ -20,6 +20,9 @@ SHIP_COLOR = "#6c7a80"            # eigenes Schiff
 HIT_COLOR = "#d7263d"             # Treffer
 HIT_TEXT_COLOR = "#ffffff"        # das X auf einem Treffer
 MISS_TEXT_COLOR = "#9fd8ef"       # das O bei einem Fehlschuss
+SUNK_BORDER_COLOR = "#ff5c6c"     # Rahmen um ein versenktes Schiff
+SUNK_COLOR = "#6b1020"            # Felder eines versenkten Schiffs
+SUNK_TEXT_COLOR = "#ff9aa5"       # Kürzel auf einem versenkten Schiff
 
 SUCCESS_COLOR = "#3ddc84"         # Statusmeldung: hat geklappt
 WARNING_COLOR = "#ffd166"         # Statusmeldung: Hinweis
@@ -30,6 +33,10 @@ RADAR_RING_COLOR = "#14412d"      # Radarkreise
 RADAR_SWEEP_COLOR = "#0e2e20"     # der drehende Radarstrahl
 RADAR_LINE_COLOR = "#2a8f5c"      # Vorderkante des Radarstrahls
 
+PREVIEW_VALID_COLOR = "#2f9e5f"   # Vorschau: Schiff passt hier
+PREVIEW_INVALID_COLOR = "#a83a45" # Vorschau: Schiff passt hier nicht
+
+
 # ---------------------------------------------------------------
 # Schriften
 # ---------------------------------------------------------------
@@ -39,6 +46,8 @@ TITLE_FONT = (FONT_FAMILY, 12, "bold")
 HEADER_FONT = (FONT_FAMILY, 24, "bold")
 SUBTITLE_FONT = (FONT_FAMILY, 10)
 MARK_FONT = (FONT_FAMILY, 18, "bold")
+
+SUNK_FONT = (FONT_FAMILY, 14, "bold")
 
 # ---------------------------------------------------------------
 # Radar-Hintergrund

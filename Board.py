@@ -1,6 +1,6 @@
-from Battleship import Enums
-from Battleship.Data import ShotOutcome
-from Battleship.Ship import Ship
+import Enums
+from Data import ShotOutcome
+from Ship import Ship
 
 class Board:
     Columns:int
